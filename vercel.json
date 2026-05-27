@@ -1,0 +1,4 @@
+{
+  "buildCommand": "echo \"Build completed locally\"",
+  "outputDirectory": "build/web-mobile"
+}
