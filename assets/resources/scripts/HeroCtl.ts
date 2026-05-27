@@ -5,7 +5,7 @@ const { ccclass, property } = _decorator;
 
 /**
  * 英雄脚本
- * @author 一朵毛山
+ * @author 개발자
  * Construct 
  */
 @ccclass('HeroCtl')

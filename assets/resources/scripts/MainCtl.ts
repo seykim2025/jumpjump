@@ -1,11 +1,11 @@
-import { _decorator, Component, Node, Label, macro } from 'cc';
+import { _decorator, Component, Node, Label, macro, profiler } from 'cc';
 import { EventDispatcher } from './EventDispatcher';
 import { GameData } from './GameData';
 import { LogicCtl } from './LogicCtl';
 const { ccclass, property } = _decorator;
 /**
  * 主脚本,挂载canvas上
- * @author 一朵毛山
+ * @author 개발자
  * Construct 
  */
 @ccclass('MainCtl')
@@ -23,11 +23,13 @@ export class MainCtl extends Component {
     
 
     start() {
+        // Hide profiler
+        profiler.hideStats();
         //设置homg page 显示在屏幕中间
         this.home_page?.setPosition(0,0);
         //注册监听自定义事件 (更新分数)
         EventDispatcher.get_instance().target.on(EventDispatcher.UPDATE_SCORE_LABEL,this.update_score_label,this);
-        //注册监听自定义事件 (开始游戏)
+        //注册监听自定义事件 (게임 시작)
         EventDispatcher.get_instance().target.on(EventDispatcher.START_GAME,this.start_game,this);
         //延迟2秒执行自动跳
         this.schedule(this.auto_play,2,macro.REPEAT_FOREVER,2);
@@ -44,7 +46,7 @@ export class MainCtl extends Component {
     }
 
     /**
-     * 手动开始游戏
+     * 手动게임 시작
      */
     start_game():void{
         this.unschedule(this.auto_play);
@@ -55,11 +57,11 @@ export class MainCtl extends Component {
         //移动和隐藏,home page
         this.home_page.setPosition(-1000,0);
         this.home_page.active = false;
-        //开始游戏,状态为1
+        //게임 시작,状态为1
         this.logic_ctl?.run_game(1);
     }
     /**
-     * 自动开始游戏
+     * 自动게임 시작
      */
     auto_play(){
         // 状态合法性判断

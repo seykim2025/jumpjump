@@ -3,7 +3,7 @@ const { ccclass, property } = _decorator;
 
 /**
  * 英雄的碰撞体脚本
- * @author 一朵毛山
+ * @author 개발자
  * Construct 
  */
 @ccclass('HeroColliderCtl')

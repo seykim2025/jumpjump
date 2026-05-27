@@ -1429,8 +1429,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 363,
-      "height": 94
+      "width": 400,
+      "height": 400
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1459,12 +1459,12 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "35f4683b-8017-4de3-8c13-1b75f176dc6c@76706",
+      "__uuid__": "5e441b34-12b8-46e2-a7bc-53d4a9e17652@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
     "_fillType": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -1618,7 +1618,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "开始游戏",
+    "_string": "게임 시작",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 40,
@@ -1914,7 +1914,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "排行榜",
+    "_string": "랭킹",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
@@ -3142,7 +3142,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "每周一零点更新",
+    "_string": "매주 월요일 갱신",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
@@ -3740,7 +3740,7 @@
       "b": 255,
       "a": 200
     },
-    "_string": "本 次 得 分",
+    "_string": "이번 점수",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 30,
@@ -4068,7 +4068,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "再玩一次",
+    "_string": "다시 하기",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 40,
@@ -4414,7 +4414,7 @@
       "b": 255,
       "a": 200
     },
-    "_string": "历史最高分:",
+    "_string": "최고 점수:",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 30,
@@ -4683,7 +4683,7 @@
       "b": 255,
       "a": 191
     },
-    "_string": "排行版,每周一凌晨刷新",
+    "_string": "랭킹 (매주 월요일 갱신)",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -4843,7 +4843,7 @@
       "b": 255,
       "a": 219
     },
-    "_string": "全部排行榜",
+    "_string": "全部랭킹",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -5634,7 +5634,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "西门吹",
+    "_string": "토스유저1",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 30,
@@ -6380,7 +6380,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "毛毛虫",
+    "_string": "토스유저2",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 30,
@@ -7126,7 +7126,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "东门吃",
+    "_string": "토스유저3",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 30,

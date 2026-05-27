@@ -3,5 +3,15 @@
   "uuid": "70c321cd-3209-43d5-bfaa-291890976f24",
   "creator": {
     "version": "3.8.3"
+  },
+  "scripts": {
+    "cocos:dev": "CocosCreator --project .",
+    "cocos:build": "CocosCreator --project . --build \"platform=web-mobile;outputName=.\" || true",
+    "dev": "granite dev",
+    "build": "ait build",
+    "deploy": "ait deploy"
+  },
+  "dependencies": {
+    "@apps-in-toss/web-framework": "^2.4.7"
   }
 }

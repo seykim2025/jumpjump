@@ -1,6 +1,6 @@
 /**
  * 接口生命
- * @author 一朵毛山
+ * @author 개발자
  * Construct 
  */
 declare module 'cc'{

@@ -4,7 +4,7 @@ const { ccclass, property } = _decorator;
 const event_target = new EventTarget();
 /**
  * 自定义事件
- * @author 一朵毛山
+ * @author 개발자
  * Construct 
  */
 export class EventDispatcher {
@@ -21,7 +21,7 @@ export class EventDispatcher {
      */
     static SHOW_OVER_WINDOW:string = "SHOW_OVER_WINDOW";
     /**
-     * 开始游戏(在玩一次)
+     * 게임 시작(在玩一次)
      */
     static START_GAME:string = "START_GAME";
     /**

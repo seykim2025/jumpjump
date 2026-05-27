@@ -4,7 +4,7 @@ import { GameData } from './GameData';
 const { ccclass, property } = _decorator;
 /**
  * 游戏结束界面,脚本
- * @author 一朵毛山
+ * @author 개발자
  * Construct 
  */
 @ccclass('OverCtl')
@@ -43,7 +43,7 @@ export class OverCtl extends Component {
 
     }
     /**
-     * 重新开始游戏
+     * 重新게임 시작
      */
     restart() {
         //隐藏该界面

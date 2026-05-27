@@ -2,7 +2,7 @@ import { _decorator, Component, Node } from 'cc';
 const { ccclass, property } = _decorator;
 /**
  * 游戏数据
- * @author 一朵毛山
+ * @author 개발자
  * Construct 
  */
 export class GameData{
@@ -30,7 +30,7 @@ export class GameData{
     }
 
     /**
-     * 重置数据,每次开始游戏调用
+     * 重置数据,每次게임 시작调用
      */
     public static reset_data(){
         GameData.game_state = 0;
