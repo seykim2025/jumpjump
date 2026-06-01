@@ -2,6 +2,7 @@
   "name": "Jump Jump Toss Mini Game",
   "short_name": "JumpJump",
   "id": "/",
+  "orientation": "portrait",
   "description": "A fun and addictive 3D jump mini game with Toss aesthetic.",
   "start_url": "/",
   "display": "standalone",
