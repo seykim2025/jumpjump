@@ -8,7 +8,8 @@
     "cocos:dev": "CocosCreator --project .",
     "cocos:build": "CocosCreator --project . --build \"platform=web-mobile;outputName=.\" || true",
     "dev": "granite dev",
-    "build": "ait build",
+    "build:toss": "ait build",
+    "build": "echo \"Already built locally!\"",
     "deploy": "ait deploy"
   },
   "dependencies": {
