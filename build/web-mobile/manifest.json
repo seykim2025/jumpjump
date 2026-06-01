@@ -1,0 +1,17 @@
+{
+  "name": "Jump Jump Toss Mini Game",
+  "short_name": "JumpJump",
+  "description": "A fun and addictive 3D jump mini game with Toss aesthetic.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#3182F6",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
