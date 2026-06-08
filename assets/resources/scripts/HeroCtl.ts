@@ -51,6 +51,13 @@ export class HeroCtl extends Component {
     init_hero(parent:Node,pos:Vec3){
         this.node.setParent(parent);
         this.node.setPosition(pos.x,pos.y+200);
+        
+        // Force player to be rendered on top of everything
+        this.set_sibling(999);
+        // Reset node transforms in case they were altered by death animations (e.g. slip)
+        this.node.angle = 0;
+        this.node.setScale(new Vec3(1, 1, 1));
+
         //弹跳动画
         tween(this.node)
             .to(0.2,{position:new Vec3(this.node.getPosition().x,pos.y-10)})
