@@ -43,12 +43,18 @@ export class OverCtl extends Component {
             // Adjust labels
             let origLabelNode = restartNode.getChildByName("Label") || restartNode.children.find(c => c.getComponent(Label));
             if (origLabelNode) {
-                origLabelNode.getComponent(Label).string = "다시하기";
+                let lbl = origLabelNode.getComponent(Label);
+                lbl.string = "다시하기";
+                lbl.overflow = 2; // Label.Overflow.SHRINK
+                lbl.enableWrapText = false;
             }
             
             let rewLabelNode = rewardedBtn.getChildByName("Label") || rewardedBtn.children.find(c => c.getComponent(Label));
             if (rewLabelNode) {
-                rewLabelNode.getComponent(Label).string = "AD 하트 2개로 다시하기";
+                let lbl = rewLabelNode.getComponent(Label);
+                lbl.string = "AD 하트 2개로 다시하기";
+                lbl.overflow = 2; // Label.Overflow.SHRINK
+                lbl.enableWrapText = false;
             }
             
             // Adjust handler
