@@ -26,16 +26,17 @@ export class GameData{
 
     public static get_hearts(): number {
         if (GameData.hearts === -1) {
-            let saved = localStorage.getItem("jumpjump.hearts");
-            GameData.hearts = saved ? parseInt(saved) : 0;
+            GameData.hearts = 0;
         }
         return GameData.hearts;
     }
 
     public static add_hearts(amount: number) {
-        let current = GameData.get_hearts();
-        GameData.hearts = current + amount;
-        localStorage.setItem("jumpjump.hearts", GameData.hearts.toString());
+        GameData.hearts = GameData.get_hearts() + amount;
+    }
+
+    public static set_hearts(amount: number) {
+        GameData.hearts = amount;
     }
 
     /**

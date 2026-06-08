@@ -125,10 +125,21 @@ export class LogicCtl extends Component {
                             //设置状态为1,解锁触控
                             GameData.set_game_state(1);
                         } else {
-                            //发送游戏结束事件,用以打开over_page面板
-                            EventDispatcher.get_instance().target.emit(EventDispatcher.SHOW_OVER_WINDOW);
-                            //游戏状态设置为4(游戏结束)
-                            GameData.set_game_state(4);
+                            if (GameData.get_hearts() > 0) {
+                                GameData.add_hearts(-1);
+                                EventDispatcher.get_instance().target.emit(EventDispatcher.UPDATE_HEART_LABEL);
+                                this.scheduleOnce(() => {
+                                    tween(this.hero_ctl.node).stop();
+                                    this.hero_ctl.reset_angle();
+                                    this.hero_ctl.init_hero(this.node, this.box_arr[this.box_arr.length - 2].get_jump_position());
+                                    GameData.set_game_state(1);
+                                }, 0.6);
+                            } else {
+                                //发送游戏结束事件,用以打开over_page面板
+                                EventDispatcher.get_instance().target.emit(EventDispatcher.SHOW_OVER_WINDOW);
+                                //游戏状态设置为4(游戏结束)
+                                GameData.set_game_state(4);
+                            }
                         }
                     }
                 } else {//踏空了
@@ -137,10 +148,22 @@ export class LogicCtl extends Component {
                     //执行踏空动画
                     this.hero_ctl.miss(this.box_arr[this.box_arr.length - 1].node
                         ,this.box_arr[this.box_arr.length - 2].node);
+                        
+                    if (GameData.get_hearts() > 0) {
+                        GameData.add_hearts(-1);
+                        EventDispatcher.get_instance().target.emit(EventDispatcher.UPDATE_HEART_LABEL);
+                        this.scheduleOnce(() => {
+                            tween(this.hero_ctl.node).stop();
+                            this.hero_ctl.reset_angle();
+                            this.hero_ctl.init_hero(this.node, this.box_arr[this.box_arr.length - 2].get_jump_position());
+                            GameData.set_game_state(1);
+                        }, 0.6);
+                    } else {
                         //发送游戏结束事件,用以打开over_page面板
-                     EventDispatcher.get_instance().target.emit(EventDispatcher.SHOW_OVER_WINDOW);
-                      //游戏状态设置为4(游戏结束)
-                     GameData.set_game_state(4);
+                        EventDispatcher.get_instance().target.emit(EventDispatcher.SHOW_OVER_WINDOW);
+                        //游戏状态设置为4(游戏结束)
+                        GameData.set_game_state(4);
+                    }
                 }
                 //清理不需要显示的箱子
                 this.step_clear();

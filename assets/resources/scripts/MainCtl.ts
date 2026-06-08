@@ -53,7 +53,15 @@ export class MainCtl extends Component {
     }
 
     update_heart_label() {
-        if(this.heartLabel) this.heartLabel.string = "❤ x " + GameData.get_hearts();
+        if(this.heartLabel) {
+            let hearts = GameData.get_hearts();
+            if (hearts > 0) {
+                this.heartLabel.node.active = true;
+                this.heartLabel.string = "❤️".repeat(hearts);
+            } else {
+                this.heartLabel.node.active = false;
+            }
+        }
     }
 
     createHeartUI() {
@@ -66,15 +74,17 @@ export class MainCtl extends Component {
         widget.top = 30;
 
         let label = node.addComponent(Label);
-        label.string = "❤ x " + GameData.get_hearts();
-        label.color = new Color(255, 0, 0, 255);
+        let hearts = GameData.get_hearts();
+        label.string = "❤️".repeat(hearts > 0 ? hearts : 0);
+        label.color = new Color(255, 255, 255, 255); // Emojis handle their own color mostly, but keep white
         label.fontSize = 40;
         
         let outline = node.addComponent(LabelOutline);
         outline.color = new Color(0, 0, 0, 255);
-        outline.width = 3;
+        outline.width = 2;
         
         this.heartLabel = label;
+        this.heartLabel.node.active = hearts > 0;
         
         // Ensure rendering order
         node.setSiblingIndex(999);
