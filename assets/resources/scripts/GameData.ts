@@ -12,6 +12,9 @@ export class GameData{
     private static total_score:number = 0;
     //每次跳跃得分
     private static step_score:number = 0;
+    
+    //Hearts
+    private static hearts:number = -1; // -1 means uninitialized
 
     /**
      * 获取游戏状态
@@ -19,6 +22,20 @@ export class GameData{
      */
     public static get_game_state():number{
         return GameData.game_state;
+    }
+
+    public static get_hearts(): number {
+        if (GameData.hearts === -1) {
+            let saved = localStorage.getItem("jumpjump.hearts");
+            GameData.hearts = saved ? parseInt(saved) : 0;
+        }
+        return GameData.hearts;
+    }
+
+    public static add_hearts(amount: number) {
+        let current = GameData.get_hearts();
+        GameData.hearts = current + amount;
+        localStorage.setItem("jumpjump.hearts", GameData.hearts.toString());
     }
 
     /**
@@ -66,13 +83,13 @@ export class GameData{
 
     public static record_history_score(){
         if(GameData.total_score>0){
-            let history_score = localStorage.getItem("history_score");
+            let history_score = localStorage.getItem("jumpjump.bestScore");
             if(!history_score){
-                localStorage.setItem("history_score",GameData.total_score+"");
+                localStorage.setItem("jumpjump.bestScore",GameData.total_score+"");
             }else{
                 let hs:number = Number(history_score);
                 if(hs<GameData.total_score){
-                    localStorage.setItem("history_score",GameData.total_score+"");
+                    localStorage.setItem("jumpjump.bestScore",GameData.total_score+"");
                 }
             }
         }

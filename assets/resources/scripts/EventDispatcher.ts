@@ -25,6 +25,10 @@ export class EventDispatcher {
      */
     static START_GAME:string = "START_GAME";
     /**
+     * Update heart count label
+     */
+    static UPDATE_HEART_LABEL:string = "UPDATE_HEART_LABEL";
+    /**
      * 获取单利
      * @returns 
      */
